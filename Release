@@ -1,0 +1,12 @@
+Origin: Geralt's Repo
+Label: Geralt's Repo
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: My Jailbreak Tweaks
+
+SHA256:
+ e1b0db34f572368d8887b78ec36b30d5536619aea3f2ef78e1e1e13f27fd7cb1 770 Packages.bz2
+ 811bcd640c8cbb4a1899b7bddf481aaf71f2ba4f7d0e5c4750195f2af56decb6 696 Packages.xz
