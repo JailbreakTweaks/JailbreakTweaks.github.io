@@ -1,0 +1,37 @@
+name: Generate
+on:
+  push:
+    branches-ignore:
+      - 'gh-pages'
+  repository_dispatch:
+
+jobs:
+  generate:
+    name: Generate Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Silica
+        uses: actions/checkout@v2
+        with:
+          repository: Shugabuga/Silica
+      - name: Checkout Template
+        uses: actions/checkout@v2
+        with:
+          path: template
+      - name: Merge Template
+        run: rsync -a template/ .
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Setup Silica
+        run: pip3 install -r requirements.txt
+      - name: Generate website
+        run: python3 index.py
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          publish_branch: gh-pages
+          commit_message: 'Update repository'

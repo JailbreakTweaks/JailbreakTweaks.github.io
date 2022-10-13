@@ -1,0 +1,11 @@
+{
+    "name": "Geralt's Repo",
+    "description": "My Jailbreak Tweaks",
+    "tint": "#2d4c7a",
+    "cname": "jailbreaktweaks.github.io",
+    "maintainer": {
+        "name": "Geralt",
+        "email": "TingPHP@gmail.com"
+    },
+    "automatic_git": "false"
+}
